@@ -1,0 +1,522 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto&display=swap");
+
+$booked: #a7a37e;
+$sold: #a1a1a1;
+$free: #002f2f;
+$not-finished: #a7c4cd;
+$text: #e6e9e9;
+$border_card: #e2e0d3;
+
+body {
+  // font-family: 'Josefin Sans', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.humburger {
+  display: none;
+}
+
+header {
+  background-color: $free;
+  width: 100%;
+  height: 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 150px 0 100px;
+
+  nav {
+    display: inherit;
+    justify-content: center;
+    width: 70%;
+  }
+
+  nav a {
+    color: $text;
+    margin-right: 3%;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      /*изменить на right:0;, чтобы изменить направление подчёркивания */
+      width: 0;
+      /*задаём длинну линии до наведения курсора*/
+      height: 2px;
+      /*задаём ширину линии*/
+      background-color: #00a650;
+      /*задаём цвет линии*/
+      content: "";
+      transition: width 0.2s ease-out;
+    }
+
+    &:hover:after,
+    &:focus:after {
+      width: 100%;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  img {
+    height: 85px;
+  }
+}
+
+.contacts {
+  color: $text;
+
+  :first-child {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  :last-child {
+    font-size: 12px;
+  }
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 75px 0 75px 25%;
+}
+
+.wrapper {
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 0 5% 50px;
+}
+
+div.arrow {
+  background-color: #f5f8f8;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+
+  img {
+    width: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.sort {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #c4c9c9;
+  margin: 35px 0 50px 0;
+
+  .active {
+    color: #839998;
+    border-bottom: 1px dotted #839998;
+  }
+
+  .sort-click-price,
+  .sort-click-room {
+    margin: 0 5px 0 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.sort-items {
+  display: flex;
+}
+
+div.arrow:hover {
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  padding: 50px 50px 0 50px;
+  border: 1px solid $border_card;
+
+  > img {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+    color: $free;
+    font-weight: 700;
+    margin: 20px 0;
+    min-height: 40px;
+  }
+}
+
+div.images {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: auto;
+    height: auto;
+  }
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+
+  > span {
+    font-size: 12px;
+  }
+}
+
+.square,
+.floor {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+span.price {
+  display: block;
+  margin: 20px 0 15px 0;
+  font-weight: 700;
+}
+
+button.status {
+  width: 100%;
+  height: 35px;
+  color: $text;
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: center;
+  background-color: $booked;
+}
+
+button.free {
+  width: 100%;
+  height: 35px;
+  color: $text;
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: center;
+  background-color: $free;
+}
+
+button.sold {
+  width: 100%;
+  height: 35px;
+  color: $text;
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: center;
+  background-color: $sold;
+}
+
+.card-container {
+  width: 30%;
+  margin-bottom: 10px;
+
+  &:hover {
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.4s;
+  }
+}
+
+.card-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.scrollUp {
+  position: fixed;
+  opacity: 0.5;
+  bottom: 1%;
+  right: 1%;
+  display: none;
+  width: 50px;
+  height: 50px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.show_more {
+  margin: 0 auto;
+  background-color: #046380;
+  width: 535px;
+  height: 70px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    text-transform: uppercase;
+    color: $text;
+    font-size: 12px;
+  }
+}
+
+.subscrbe {
+  margin: 50px auto 0;
+  background-color: #046380;
+  width: 1280px;
+  height: 196px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+
+  div.action {
+    margin-left: 50px;
+  }
+
+  span:first-child {
+    color: $text;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  span:last-child {
+    color: $text;
+    font-size: 12px;
+  }
+}
+
+form {
+  display: flex;
+  height: 100px;
+  flex-wrap: wrap;
+
+  input#mail {
+    width: 215px;
+    height: 50px;
+    background-color: #fff;
+  }
+
+  input:nth-child(2) {
+    width: 215px;
+    height: 50px;
+    background-color: $booked;
+    color: $text;
+    margin-left: 5%;
+  }
+}
+
+.toggle p {
+  color: $text;
+
+  span {
+    margin-left: 10px;
+  }
+}
+
+img.img:hover {
+  cursor: pointer;
+}
+
+.favorites,
+.control-clear {
+  height: 30px;
+  background: lightcoral;
+  border-radius: 5px;
+  padding: 0 5px;
+  color: #fff;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.btn-disabled {
+  background: $sold;
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: 0px 4px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+// ============= MEDIA ===========================
+
+@media only screen and (max-width: 1280px) {
+  .wrapper {
+    width: 100%;
+    // z-index: -2;
+  }
+
+  .card-container {
+    width: 32%;
+  }
+
+  header {
+    padding: 0 30px;
+
+    nav a {
+      margin-right: 2%;
+    }
+  }
+
+  .subscrbe {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .card {
+    padding: 5% 3% 0 3%;
+  }
+
+  .card > img {
+    width: 15px;
+    height: 15px;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .humburger {
+    display: block;
+    text-transform: uppercase;
+    color: $text;
+    font-weight: 700;
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  header {
+    position: relative;
+  }
+
+  header nav {
+    position: absolute;
+    top: -200%;
+    display: flex;
+    flex-direction: column;
+    background-color: $free;
+    opacity: 0.9;
+    width: 150px;
+    text-align: center;
+    z-index: 1;
+    transition: 1s;
+    
+    
+
+    a {
+      padding: 10px;
+
+      &::after {
+        bottom: 3px;
+      }
+    }
+  }
+  header nav.show {
+    position: absolute;
+    top: 100%;
+    transition: 0.5s;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  h1 {
+    margin: 5% auto;
+    font-size: 30px;
+  }
+
+  form {
+    max-width: 90%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin-right: 1%;
+
+    input:nth-child(2) {
+      margin: 5px 0;
+      max-width: 100%;
+    }
+  }
+
+  .card-container {
+    width: 48%;
+  }
+
+  .subscrbe div.action {
+    margin-left: 1%;
+  }
+
+  .show_more {
+    max-width: 100%;
+  }
+
+  .sort {
+    font-size: 14px;
+  }
+}
+.control-items {
+  display: flex;
+}
+.control {
+  display: flex;
+
+  .control-number {
+    width: 30px;
+    height: 30px;
+    background-color: lightcoral;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px 2px rgba(34, 60, 80, 0.44);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-left: 5px;
+  }
+
+  .control-clear {
+    margin-left: 20px;
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .sort {
+    flex-direction: column;
+    margin: 30px 0;
+  }
+  .control-items {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .card-container {
+    width: 80%;
+    margin: 0 auto 10px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .subscrbe span:first-child {
+    font-size: 14px;
+    display: block;
+  }
+}

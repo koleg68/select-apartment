@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Select apartment</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/custom-reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <img src="img/logo.png" alt="" class="logo" />
+      <div class="humburger">
+        <span>menu</span>
+      </div>
+      <nav>
+        <a href="#">Объекты</a>
+        <a href="#">Компания</a>
+        <a href="#">Как купить</a>
+        <a href="#">Агентам</a>
+        <a href="#">Регионам</a>
+        <a href="#">Акции</a>
+        <a href="#">Контакты</a>
+      </nav>
+      <div class="contacts">
+        <span>8 888 88 88 98</span><br /><span>Звони скорее!</span>
+      </div>
+    </header>
+    <h1>Найдено 666 квартир</h1>
+    <div class="wrapper">
+      <div class="sort">
+        <div class="sort-items">
+          <span>Сортировать по:</span>
+          <div class="sort-click-price">Цене</div>
+          <div class="arrow arrow-price">
+            <img src="img/arrow.png" alt="" />
+          </div>
+          <span class="sort-click-room">Комнатам</span>
+          <div class="arrow">
+            <img src="img/arrow.png" alt="" />
+          </div>
+        </div>
+
+        <div class="control-items">
+          <button class="favorites btn-disabled">В избранное...</button>
+          <div class="control">
+            <div class="control-number">0</div>
+            <button class="control-clear" onClick="dischargeAll()">
+              Очистить
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-row">
+        <div class="card-container" data-price="1900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images"><img src="img/44.png" alt="" /></div>
+            <h2>Студия №44</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">1 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="1666666">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images"><img src="img/666.png" alt="" /></div>
+            <h2>Однокомнатная №666</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">1 666 666 руб.</span>
+          </div>
+          <button class="free">свободно</button>
+        </div>
+        <div class="card-container" data-price="5900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images">
+              <img src="img/567.png" alt="" />
+            </div>
+            <h2>Двухкомнатная №567</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">5 900 000 руб.</span>
+          </div>
+          <button class="sold">продано</button>
+        </div>
+        <div class="card-container" data-price="12900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images"><img src="img/45.png" alt="" /></div>
+            <h2>Трёхкомнатная №45</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">12 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="1900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images">
+              <img src="img/25.png" alt="" />
+            </div>
+            <h2>Студия №25</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">1 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="23900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images">
+              <img src="img/259.png" alt="" />
+            </div>
+            <h2>Четырёхкомнатная №259</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">23 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="12900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images"><img src="img/45.png" alt="" /></div>
+            <h2>Трёхкомнатная №45</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">12 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="1900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images">
+              <img src="img/25.png" alt="" />
+            </div>
+            <h2>Студия №25</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">1 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="23900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images">
+              <img src="img/259.png" alt="" />
+            </div>
+            <h2>Четырёхкомнатная №259</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">23 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="12900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images"><img src="img/45.png" alt="" /></div>
+            <h2>Трёхкомнатная №45</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">12 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="1900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images">
+              <img src="img/25.png" alt="" />
+            </div>
+            <h2>Студия №25</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">1 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+        <div class="card-container" data-price="23900000">
+          <div class="card">
+            <img src="img/star.png" alt="" class="img" />
+            <div class="images">
+              <img src="img/259.png" alt="" />
+            </div>
+            <h2>Четырёхкомнатная №259</h2>
+            <div class="detail">
+              <span>без<br />отделки</span>
+              <div class="square">
+                <span>28м<sup>2</sup></span>
+                <span>площадь</span>
+              </div>
+              <div class="floor">
+                <span>12/14</span>
+                <span>этаж</span>
+              </div>
+            </div>
+            <span class="price">23 900 000 руб.</span>
+          </div>
+          <button class="status">забронировано</button>
+        </div>
+      </div>
+
+      <div class="show_more">
+        <span>показать еще 20</span>
+      </div>
+      <div>
+        <img src="img/up.png" alt="" class="scrollUp" />
+      </div>
+    </div>
+    <div class="subscrbe">
+      <div class="action">
+        <span>Успей купить!</span><br />
+        <span>Подпишись и успей купить все акции</span>
+      </div>
+      <form method="get">
+        <input
+          type="text"
+          name="email"
+          placeholder="example@example.com"
+          id="mail"
+        />
+        <input type="submit" value="подписаться" />
+
+        <div class="toggle">
+          <p><input type="checkbox" /><span>подписаться на новости</span></p>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- <script src="js/sortAppart.js"></script> -->
+  </body>
+</html>

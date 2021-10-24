@@ -95,7 +95,7 @@ let amountItems = document.querySelector('.control-number');
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener("click", (e) => {
     if (images[i] == e.target && !images[i].classList.contains("changeImage")) {
-      images[i].src = "/img/star_bg.png";
+      images[i].src = "../img/star_bg.png";
       images[i].classList.add("changeImage");
       count++;
       amountItems.innerHTML = count;
@@ -104,7 +104,7 @@ for (let i = 0; i < images.length; i++) {
       images[i] == e.target &&
       images[i].classList.contains("changeImage")
     ) {
-      images[i].src = "/img/star.png";
+      images[i].src = "../img/star.png";
       images[i].classList.remove("changeImage");
       count--;
       amountItems.innerHTML = count;

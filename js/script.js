@@ -1,13 +1,11 @@
-
 function showMobMenu() {
   const mobMenuBtn = document.querySelector(".humburger span");
-  const mobMenu = document.querySelector('header nav');
-  mobMenuBtn.addEventListener('click', ()=> {
-    mobMenu.classList.toggle('show');
-  })
+  const mobMenu = document.querySelector("header nav");
+  mobMenuBtn.addEventListener("click", () => {
+    mobMenu.classList.toggle("show");
+  });
 }
 showMobMenu();
-
 
 $(function () {
   $(window).scroll(function () {
@@ -36,8 +34,8 @@ document.querySelector(".toggle input").checked = true;
 let myCont = document.querySelector(".card-row");
 let arrow = document.querySelector(".arrow-price");
 
-  let sortPrice = document.querySelector(".sort-click-price");
-  sortPrice.addEventListener('click', function(e){ 
+let sortPrice = document.querySelector(".sort-click-price");
+sortPrice.addEventListener("click", function (e) {
   e.target.classList.toggle("active");
   if (e.target.classList.contains("active")) {
     sortPrice = sortPriceUp();
@@ -90,12 +88,12 @@ function insertAfter(elem, refElem) {
 
 let images = document.querySelectorAll(".img");
 let count = 0;
-let amountItems = document.querySelector('.control-number');
+let amountItems = document.querySelector(".control-number");
 
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener("click", (e) => {
     if (images[i] == e.target && !images[i].classList.contains("changeImage")) {
-      images[i].src = "/img/star_bg.png";
+      images[i].src = "./img/star_bg.png";
       images[i].classList.add("changeImage");
       count++;
       amountItems.innerHTML = count;
@@ -104,7 +102,7 @@ for (let i = 0; i < images.length; i++) {
       images[i] == e.target &&
       images[i].classList.contains("changeImage")
     ) {
-      images[i].src = "/img/star.png";
+      images[i].src = "./img/star.png";
       images[i].classList.remove("changeImage");
       count--;
       amountItems.innerHTML = count;
@@ -156,16 +154,25 @@ function dischargeAll() {
 
 function showAmountApartments() {
   let cards = document.querySelectorAll(".card-container").length;
-    quantityOfCards = document.querySelector("h1");
+  quantityOfCards = document.querySelector("h1");
   quantityOfCards.innerHTML = `Найдено ${cards} квартир`;
-
-  let changeAmount = document.querySelector('.control-number');
-  changeAmount.addEventListener('change', (e)=> {
-    console.log(e.target.innerHTML);
-  })
 }
 showAmountApartments();
 
+window.addEventListener("load", () => {
+  const links = document.querySelectorAll("nav a");
+  for (let i of links) {
+    i.addEventListener("click", clickMenu);
+  }
+});
 
+function clickMenu(e) {
+  e.preventDefault();
+  const target = document.querySelector(this.hash);
+  window.scrollTo({
+    top: target.offsetTop,
+    behavior: "smooth"
+  });
+}
 
 // 1981641ab96419f3869737739b234754d9631b20

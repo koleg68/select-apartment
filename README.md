@@ -1,2 +1,2 @@
-# select-appartment
+# select-apartment
 данную работу мне предложили сделать в качестве тестового задания на соискание вакансии frontend-developer
